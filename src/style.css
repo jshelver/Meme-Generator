@@ -47,6 +47,7 @@ nav {
     flex-direction: column;
     align-items: center;
     width: var(--desktopWidth);
+    margin-bottom: 3rem;
 }
 .form-input-wrapper {
     display: flex;
@@ -57,7 +58,6 @@ nav {
     animation: loadin 0.5s ease;
 }
 .form-input-top, .form-input-bottom {
-    font-family: 'Karla', sans-serif;
     border-radius: 5px;
     border: 1px solid #d5d4d8;
     width: calc(var(--desktopWidth) / 2 - 0.4rem);
@@ -65,7 +65,6 @@ nav {
     padding-block: 0.7rem;
 }
 .form-button {
-    font-family: 'Karla', sans-serif;
     width: var(--desktopWidth);
     border-radius: 5px;
     background: linear-gradient(90deg, #672280, 1.18%, #a626d3 100%);
@@ -86,10 +85,11 @@ nav {
     background: linear-gradient(90deg, #672280, 1.18%, #a626d3 100%);
 }
 .meme-wrapper {
-    margin-top: 3rem;
     position: relative;
     text-align: center;
     animation: loadin 0.5s ease;
+    height: fit-content;
+    width: fit-content;
 }
 .meme {
     width: var(--desktopWidth);
@@ -114,9 +114,40 @@ nav {
     margin-bottom: 2%;
 }
 
+/* Download Styling */
+.download {
+    margin-top: 2rem;
+    margin-bottom: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--desktopWidth);
+    animation: loadin 0.5s ease;
+}
+.download-button {
+    width: var(--desktopWidth);
+    border-radius: 5px;
+    background: linear-gradient(90deg, #672280, 1.18%, #a626d3 100%);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    transition: transform 0s ease;
+    padding-block: 0.7rem;
+    animation: loadin 0.5s ease;
+}
+.download-button:hover {
+    transform: scale(1.01);
+    background: linear-gradient(90deg, rgba(103, 34, 128, 0.9), 1.18%, rgba(165, 38, 211, 0.9) 100%);
+}
+.download-button:active {
+    transform: scale(0.99);
+    background: linear-gradient(90deg, #672280, 1.18%, #a626d3 100%);
+}
+
 /* Media Queries */
 @media screen and (max-width: 780px) {
-    .form, .meme, .form-button, .form-input-wrapper {
+    .form, .meme, .form-button, .form-input-wrapper, .download-button {
         width: calc(100vw - 5rem);
     }
     .form-input-top, .form-input-bottom {
@@ -141,11 +172,11 @@ nav {
 /* Load in animations */
 @keyframes loadin {
     0% {
-        margin-right: 90%;
+        transform: scale(.01);
         opacity: 0;
     }
     100% {
-        margin-right: 0%;
+        transform: scale(1);
         opacity: 100;
     }
 }

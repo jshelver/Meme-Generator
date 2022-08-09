@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useCallback, useRef } from "react"
+import Download from "./Download"
 
 function Form() {
     const [meme, setMeme] = React.useState({
@@ -41,11 +42,12 @@ function Form() {
                 </div>
                 <button className="form-button" onClick={getMemeImage}>Get a new meme image</button>
             </div>
-            <div className="meme-wrapper">
+            <div className="meme-wrapper" id="meme-download">
                 <img src={meme.randomImage} className="meme"/>
                 <div className="meme-top-text">{meme.topText}</div>
                 <div className="meme-bottom-text">{meme.bottomText}</div>
             </div>
+            <Download/>
         </div>
     )
 }
